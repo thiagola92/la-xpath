@@ -1,0 +1,48 @@
+[project]
+name = "la-xpath"
+version = "0.1.0"
+description = "XPath finder"
+authors = [
+    {name = "thiagola92", email = "thiagola92@gmail.com"},
+]
+dependencies = [
+    "html5lib>=1.1",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+classifiers=[
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+]
+keywords=[
+    "xpath",
+    "search",
+    "find"
+]
+license = {text = "MIT"}
+
+[project.urls]
+repository = "https://github.com/thiagola92/la-xpath"
+
+[project.optional-dependencies]
+
+[tool.pdm]
+
+[tool.pdm.scripts]
+unittest = "python -m unittest discover -v -f -s tests"
+black = "python -m black ."
+isort = "python -m isort -v --ac ."
+
+[tool.pdm.dev-dependencies]
+lint = [
+    "black",
+    "isort"
+]
+dev = [
+    "parsel>=1.6.0",
+]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
